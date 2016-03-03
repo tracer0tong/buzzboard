@@ -1,0 +1,8 @@
+CAPTCHA_PROBABILITY = 1.0
+CAPTCHA_PRIVKEY = 'xxxx'
+CAPTCHA_PUBKEY = 'xxxx'
+
+REDIS_QUEUE = {'host': '127.0.0.1', 'db': 1}
+REDIS_PREFIX = 'bb'
+
+METHODS = ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD']

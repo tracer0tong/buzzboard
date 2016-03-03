@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block bodyblock %}
+<div class="modal fade" id="captchaModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Please enter the CAPTCHA</h4>
+            </div>
+            <form method="POST">
+                <div class="modal-body">
+                    <p>We are sure that you aren't robot, prove it =)</p>
+                </div>
+                {% autoescape false %}
+                {{ captcha }}
+                {% endautoescape %}
+                <input type='hidden' name='uuid' value='{{ uuid }}'/>
+                <div class="modal-footer">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(window).load(function () {
+        $('#captchaModal').modal({
+            show: true,
+            backdrop: 'static',
+            keyboard: false
+        });
+    });
+</script>
+{% endblock %}

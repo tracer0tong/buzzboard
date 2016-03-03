@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block bodyblock %}
+    <p class="h2 text-center text-info">Messages on our amazing message board</p>
+    <div class="text-center">
+        <form method="post" action="/">
+            <div class="form-group center">
+                <input name="message" type="text" class="form-control" placeholder="Message text" autofocus>
+            </div>
+            <!-- -->
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+    <br/>
+    <div>
+        <table class="table table-condensed table-bordered">
+            {% for m in messages %}
+                <tr>
+                    <td class="text-center">
+                        {{ m[1] }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block bodyblock %}
+    <div>
+        <button class="btn-warning" id="clean">Clear queues</button>
+        <button class="btn-danger" id="strict">Strict mode on/off</button>
+    </div>
+    <script>
+        $('#clean').click(function () {
+            $.ajax({
+                url: '/clean',
+                type: 'GET'
+            });
+        });
+        $('#strict').click(function () {
+            $.ajax({
+                url: '/strict',
+                type: 'GET'
+            });
+        });
+    </script>
+    <div>
+        <h2>Info</h2>
+        Accuracy={{ acc }}<br/>
+        MSE={{ mse }}<br/>
+        Mode is {% if mode==1 %}<span class="text-info">LEARN</span>{% else %}
+        <span class="text-danger">STRICT</span>{% endif %}
+    </div>
+    <div>
+        <h2>Feature importance</h2>
+        <table class="table table-bordered">
+            {% for f in fw.keys() %}
+                <tr>
+                    <td>{{ f }}</td>
+                    <td>{{ fw[f] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div>
+        <h2>Tree graph</h2>
+    </div>
+    <div>
+        <img id="graph" src="https://chart.googleapis.com/chart?cht=gv&chl={{ dot|urlencode }}"/>
+    </div>
+    <div>
+        <h2>Learning set</h2>
+        <table class="table table-bordered">
+            {% for l in train %}
+                {% if l['passed'] %}
+                    <tr class="bg-success">
+                        {% else %}
+                    <tr class="bg-danger">
+                {% endif %}
+            <td>{{ l['passed'] }}</td>
+            <td>{{ l['features'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
