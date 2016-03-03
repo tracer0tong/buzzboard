@@ -10,4 +10,5 @@ Basically it is a Decision Tree classifier for HTTP requests features.
 
 You need a Python 3.5 with ScikitLearn for this application. I'd recommend to install Anaconda IDE, because it has all libraries for this project (https://www.continuum.io/downloads).
 Also as simple database this application needs Redis on localhost (with default parameters, take it on http://redis.io/download).
+You also should define ReCAPTCHA API keys in settings.py file.
 
