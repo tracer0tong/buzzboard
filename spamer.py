@@ -16,7 +16,7 @@ def generate_string(n=10):
     return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(n))
 
 
-def send_spam(cnt=SPAM_CNT, mode=0):
+def send_spam(mode=0):
     for i in range(0, SPAM_CNT):
         if mode == 0:
             r = requests.post(SPAM_HOST, data={'message': SPAM_MESSAGE})
@@ -25,7 +25,7 @@ def send_spam(cnt=SPAM_CNT, mode=0):
                               data={'message': SPAM_MESSAGE*2},
                               headers={'User-Agent': generate_string(200)})
         elif mode == 2:
-            headers={'User-Agent': SPAM_MESSAGE*20}
+            headers={'User-Agent': generate_string(200)}
             for hn in range(0, 25):
                 headers[generate_string(10)] = generate_string(25)
             r = requests.post(SPAM_HOST,
