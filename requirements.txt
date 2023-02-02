@@ -7,5 +7,5 @@ redis==2.10.5
 requests==2.20.0
 scikit-learn==0.17
 scipy==0.17.0
-Werkzeug==0.15.3
+Werkzeug==0.15.5
 wheel==0.29.0
