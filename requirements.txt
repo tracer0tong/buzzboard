@@ -3,7 +3,7 @@ itsdangerous==0.24
 Jinja2>=2.10.1
 MarkupSafe==0.23
 numpy==1.22.0
-redis==2.10.5
+redis==4.5.3
 requests==2.20.0
 scikit-learn==0.17
 scipy==0.17.0
