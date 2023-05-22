@@ -4,7 +4,7 @@ Jinja2>=2.10.1
 MarkupSafe==0.23
 numpy==1.22.0
 redis==4.5.4
-requests==2.20.0
+requests==2.31.0
 scikit-learn==0.17
 scipy==0.17.0
 Werkzeug==2.2.3
