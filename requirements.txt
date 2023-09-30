@@ -6,6 +6,6 @@ numpy==1.22.0
 redis==4.5.4
 requests==2.31.0
 scikit-learn==0.17
-scipy==0.17.0
+scipy==1.10.0
 Werkzeug==2.2.3
 wheel==0.38.1
